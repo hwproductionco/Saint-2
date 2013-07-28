@@ -1277,7 +1277,7 @@ var App = function () {
         function graphs() {
 
             var graphData = [];
-            var series = Math.floor(Math.random() * 10) + 1;
+            var series = 6;
             for (var i = 0; i < series; i++) {
                 graphData[i] = {
                     label: "Series" + (i + 1),
