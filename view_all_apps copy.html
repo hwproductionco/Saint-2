@@ -6,11 +6,13 @@
 <!-- BEGIN HEAD -->
 <head>
 	<meta charset="utf-8" />
-	<title>ClientToolbox | Add New App</title>
+	<title>ClientToolbox | View All Apps</title>
 	<meta content="width=device-width, initial-scale=1.0" name="viewport" />
 	<meta content="" name="description" />
 	<meta content="" name="author" />
 	<link href="assets/bootstrap/css/bootstrap.css" rel="stylesheet" />
+        <link href="assets/bootstrap-rowlink/bootstrap-rowlink.css" rel="stylesheet" />
+
 	<link href="assets/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" />
 	<link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
 	<link href="assets/css/style.css" rel="stylesheet" />
@@ -117,8 +119,7 @@
 					<i class="icon-book"></i> Campaigns
 					<span class="arrow"></span>
 					</a>
-                <ul class="sub"><li><a class="" href="view_all_programs.html">View All</a></li><li><a class="" href="">Add New Campaign</a></li></ul></li
-				><li class="has-sub">
+                <ul class="sub"><li><a class="" href="view_all_programs.html">View All</a></li><li><a class="" href="add_new_campaign.html">Add New Campaign</a></li></ul></li><li class="has-sub">
 					<a href="javascript:;" class="">
 					<i class="icon-bar-chart"></i> Reports
 					<span class="arrow"></span>
@@ -141,16 +142,16 @@
 					<span class="arrow"></span>
 					</a>
 					<ul class="sub">
-						<li><a  href="manage_authorized_users.html">View</a></li>
-                        <li ><a  href="add_new_user.html">Add New User</a></li>
+						<li ><a class="" href="manage_authorized_users.html">View</a></li><li><a class="" href="add_new_user.html">Add New User</a></li>
 						</ul></li>
-				<li class="has-sub">
+				<li class="has-sub active">
 					<a href="javascript:;" class="">
 					<i class="icon-tablet"></i> Apps
 					<span class="arrow"></span>
 					</a>
-					<ul class="sub active">
-						<li><a class="active" href="#">Create New App</a></li><li><a class="" href="view_all_apps.html">View Apps</a></li></ul></li>
+					<ul class="sub">
+						<li class="active"><a class="" href="view_all_apps.html">View Apps</a></li>
+                        <li><a class="" href="add_new_app.html">Create New App</a></li></ul></li>
 				
 			</ul>
 		</div>
@@ -205,15 +206,14 @@
 						<!-- BEGIN PAGE TITLE & BREADCRUMB-->		
 						<!--h3 class="page-title">
 							Users
-							<small>Add New User</small>
+							<small>Manage Authorized Users</small>
 						</h3-->
 						<ul class="breadcrumb">
 							<li>
 								<i class="icon-home"></i>
 								<a href="index.html">Home</a> <span class="divider">/</span>
 							</li>
-							<li><a href="#">Apps</a> <span class="divider">/</span></li>
-                            <li>Add New App</li>	 <div class="row-fluid">
+							<li><a href="#">Manage Authorized Users</a></li>	 <div class="row-fluid">
                      <div class="span12 responsive">
                      
                      <div class="span4 responsive">
@@ -246,60 +246,79 @@
 							<!-- BEGIN EXAMPLE TABLE PORTLET-->
 							<div class="widget">
 								<div class="widget-title">
-									<h4><i class="icon-tablet"></i>  Create New App</h4>
-															
+									<h4><i class="icon-group"></i>Manage Authorized Users</h4>
+									<span class="tools">
+									
+											
+									</span>							
 								</div>
 								<div class="widget-body">
-                                <div class="row-fluid">
-                                <div class="span12">
-                                <!-- BEGIN FORM -->
-                                <form action="#" class="form-horizontal">
-                              
-                              <h5>Select Which Campaign(s) This App Is Allowed Access To</h5>
-                                
-                              
-                              <div class="control-group">
-                                       <div class="controls">
-                                       	<label class="checkbox line">
-                                          <input type="checkbox" value="" /> All
-                                          </label>	
-                                          <label class="checkbox line">
-                                          <input type="checkbox" value="" /> Campaign 1
-                                          </label>
-                                          <label class="checkbox line">
-                                          <input type="checkbox" value="" /> Campaign 2
-                                          </label>
-                                          
-                                       </div>
-                                    </div>              
-                             
-                             
-                              
-                              <div class="form-actions">
-                                 <button type="submit" class="btn btn-success"><i class="icon-plus icon-white"></i> Create New App</button>
-                                 <button type="button" class="btn">Cancel</button>
+									<table class="table table-striped table-hover" id="manage_auth_users" data-provides="rowlink">
+										<thead>
+											<tr>
+                                            <th style="width:8px"><input type="checkbox" class="group-checkable" data-set=".checkboxes" /></th>
+												<th>App Username</th>
+												<th>App Name</th>
+                                                <th>App API Token</th>
+												<!--th style="width:120px;">Edit</th>
+                                                <th style="width:120px;">Delete</th-->
+												
+											</tr>
+										</thead>
+										<tbody>
+											<tr class="odd gradeX">
+												<td><input type="checkbox" class="checkboxes" name="case" value="1" /></td>
+                                                <td><a href="edit_app.html">myfacebookapp</a></td>
+												<td>My Facebook App</td>
+                                                <td>a8s98a7s98d79a8798a798v987875a675v</td>
+												<!--td><button class="btn btn-small btn-info" type="button" onclick="window.location.href='edit_app.html'"><i class="icon-pencil"></i> Edit</button></td>
+                                                <td><button class="btn btn-small btn-danger" type="button"><i class="icon-trash"></i> Delete</button></td-->
+												
+											</tr>
+											<tr class="odd gradeX">
+												<td><input type="checkbox" class="checkboxes" name="case" value="1" /></td>
+                                                <td><a href="edit_app.html">myfacebookapp</a></td>
+												<td>My Facebook App</td>
+                                                <td>a8s98a7s98d79a8798a798v987875a675v</td>
+												<!--td><button class="btn btn-small btn-info" type="button" onclick="window.location.href='edit_app.html'"><i class="icon-pencil"></i> Edit</button></td>
+                                                <td><button class="btn btn-small btn-danger" type="button"><i class="icon-trash"></i> Delete</button></td-->
+												
+											</tr>
+											
+										</tbody>
+									</table>
+                                    
+                                    
+                                    
+                                      <div class="btn-group" style="margin-top:15px;">
+                                 <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown"  style="width:100%;">Action <span class="caret"></span></button>
+                                 <ul class="dropdown-menu">
+                                    <li><a href="#myModal1" data-toggle="modal"><i class="icon-trash"></i> Delete</a></li>
+                                   
+                                    
+                                 </ul>
                               </div>
                               
-                              <!-- END FORM -->
-									
-                                            </div>
-                                    
-                                    </div>
-                                    
+                               <div id="myModal1" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+											<h3 id="myModalLabel2">Delete</h3>
+										</div>
+										<div class="modal-body scroller">
+											<p>You are about to delete these apps.  Are you sure you want to continue?</p>
+
+
+										</div>
+										<div class="modal-footer">
+											<button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+											<button class="btn btn-primary">Continue</button>
+										</div>
+									</div>
                                     
                                     
 								</div>
-                                
-                                
-                                
 							</div>
 							<!-- END EXAMPLE TABLE PORTLET-->
-                            
-                            
-                                   
-                                    
-                            
-                            
 						</div>
 					</div>
 					
@@ -329,6 +348,9 @@
 	<script src="assets/js/excanvas.js"></script>
 	<script src="assets/js/respond.js"></script>
 	<![endif]-->	
+    	<script type="text/javascript" src="assets/data-tables/jquery.dataTables.js"></script>
+    <script type="text/javascript" src="assets/bootstrap-rowlink/bootstrap-rowlink.js"></script>
+
 	<script type="text/javascript" src="assets/data-tables/jquery.dataTables.js"></script>
 	<script type="text/javascript" src="assets/data-tables/DT_bootstrap.js"></script>	
 	<script type="text/javascript" src="assets/uniform/jquery.uniform.min.js"></script>
