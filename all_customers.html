@@ -6,7 +6,7 @@
 <!-- BEGIN HEAD -->
 <head>
 	<meta charset="utf-8" />
-	<title>ClientToolbox | Reports | All Customers</title>
+	<title>ClientToolbox | Reports | Customer Search</title>
 	<meta content="width=device-width, initial-scale=1.0" name="viewport" />
 	<meta content="" name="description" />
 	<meta content="" name="author" />
@@ -125,25 +125,22 @@
 					<i class="icon-book"></i> Campaigns
 					<span class="arrow"></span>
 					</a>
-                <ul class="sub"><li><a class="" href="view_all_programs.html">View All</a></li><li><a class="" href="add_new_campaign.html">Add New Campaign</a></li></ul></li><li class="has-sub active">
+                <ul class="sub"><li><a class="" href="view_all_programs.html">View All</a></li><li><a class="" href="add_new_campaign.html">Add New Campaign</a></li></ul></li><li class="has-sub">
 					<a href="javascript:;" class="">
 					<i class="icon-bar-chart"></i> Reports
 					<span class="arrow"></span>
 					</a>
 					<ul class="sub">
-                    <li style="color:#ffffff; border-bottom:1 px solid #FFFFFF;"><strong>Transaction Reports</strong></li>
-						<li><a class="" href="all_transactions.html">All Transactions</a></li>
-						<li><a class="" href="redeemed_only.html">Audit: Redeemed Only</a></li>
-						<li><a class="" href="total_transactions.html">Audit: Total</a></li>
-                        <li style="color:#ffffff; border-bottom:1 px solid #FFFFFF;"><strong>Customer Reports</strong></li>
-<li class="active"><a class="" href="all_customers.html">All Customers</a></li>
+				<li style="color:#ffffff; border-bottom:1 px solid #FFFFFF;"><strong>Transaction Reports</strong></li>		<li><a class="" href="all_transactions.html">All Transactions</li></a>
+						<li><a class="" href="redeemed_only.html">Redeemed</a></li>
+						<li><a class="" href="total_transactions.html">Totals</a></li>
+<li style="color:#ffffff; border-bottom:1 px solid #FFFFFF;"><strong>Customer Reports</strong></li><li><a class="" href="all_customers.html">Customer Search</a></li>
 <li><a class="" href="new_customers.html">New Customers</a></li>
 <li><a class="" href="frequent_customers.html">Frequent Customers</a></li>
 <li><a class="" href="missing_customers.html">Missing Customers</a></li>
-<li><a class="" href="birthday.html">Birthday</a></li>
-<li><a class="" href="custom_date.html">Custom Date</a></li>
-
-<li><a class="" href="customer_balance.html">Customer Balance</a></li></ul></li>
+<li><a class="" href="birthday.html">Birthdays</a></li>
+<!-- <li><a class="" href="custom_date.html">Custom Date</a></li>
+--><li><a class="" href="customer_balance.html">Balances</a></li></ul></li>
 				<li class="has-sub">
 					<a href="javascript:;" class="">
 					<i class="icon-user"></i> Users
@@ -213,7 +210,7 @@
 						<!-- BEGIN PAGE TITLE & BREADCRUMB-->		
 						<!--h3 class="page-title">
 							Reports
-							<small>All Customers</small>
+							<small>All Transactions</small>
 						</h3-->
 						<ul class="breadcrumb">
 							<li>
@@ -253,7 +250,7 @@
 							<!-- BEGIN EXAMPLE TABLE PORTLET-->
 							<div class="widget">
 								<div class="widget-title">
-									<h4><i class="icon-bar-chart"></i>  Reports - All Customers</h4>
+									<h4><i class="icon-search"></i>  Customer Search</h4>
 															
 								</div>
 								<div class="widget-body">
@@ -266,46 +263,63 @@
                                 <!-- BEGIN FORM -->
                               
                                <form action="#">
-                              <div class="control-group">
-                                 <h5>Default Date Ranges</h5>
-                                 <div class="controls">
-                                    <div class="input-prepend">
-                                       <span class="add-on"><i class="icon-calendar"></i></span><input type="text" class="input-large date-range" />
-                                    </div>
-                                 </div>
-                              </div>
-                              
-                               <h5 style="padding-top:20px;">Select Campaigns</h5>
-                              
-                              <div class="control-group">
-                                 <div class="controls">
-                                    <label class="checkbox">
-                                    <input type="checkbox" value="" /> Select / Deselect All
-                                    </label>
-                                    <label class="checkbox">
-                                    <input type="checkbox" value="" /> Application Install (Facebook Badge)
-                                    </label>
-                                    <label class="checkbox">
-                                    <input type="checkbox" value="" /> Bonus Points
-                                    </label>
-                                    <label class="checkbox">
-                                    <input type="checkbox" value="" /> Checkin (Facebook Badge)
-                                    </label>
-                                    <label class="checkbox">
-                                    <input type="checkbox" value="" /> Qualified Leads
-                                    </label>
-                                    <label class="checkbox">
-                                    <input type="checkbox" value="" /> Referral  (Facebook Badge)
-                                    </label>
-                                    <label class="checkbox">
-                                    <input type="checkbox" value="" /> Referral 5 (Facebook Badge)
-                                    </label>
-                                    <label class="checkbox">
-                                    <input type="checkbox" value="" /> Soft Leads
-                                    </label>
-                                 </div>
-                              </div>
-                              
+                               
+                               <input type="hidden" name="count" value="1" />
+<div class="control-group" id="fields">
+           <div class="controls" id="profs"> 
+             <div class="input-append">
+              <select class="span3 " tabindex="1" id="searchfield1" name="search1" data-placeholder="Choose a Category" style="padding-right:10px;">
+<option value="">Search For...</option>
+<option value="Card Number">Card Number</option>
+<option value="First Name">First Name</option>
+<option value="Last Name">Last Name</option>
+<option value="Email Address">Email Address</option>
+<option value="Birthday">Birthday</option>
+<option value="Address Line 1">Address Line 1</option>
+<option value="Address Line 2">Address Line 2</option>
+<option value="City">City</option>
+<option value="State / Province">State / Province</option>
+<option value="Zip / Postal Code">Zip / Postal Code</option>
+<option value="County">Country</option>
+<option value="Username">Username</option>
+<option value="Custom Field">Custom Field</option>
+</select><img src="assets/img/clearpix.png" width="15" height="5" /><input style="padding-left:10px;" autocomplete="off" class="span3" id="field1" name="prof1" type="text" placeholder=""  data-items="8" 
+/><button id="b1" onClick="addFormField()" class="btn btn-info" type="button">+</button>
+             </div>
+             
+           </div>
+         </div>
+                               
+                               <!--div class="control-group">
+<label class="control-label">Search For</label>
+<div class="controls">
+<select class="span6 " tabindex="1" data-placeholder="Choose a Category">
+<option value="">Select...</option>
+<option value="Card Number">Card Number</option>
+<option value="First Name">First Name</option>
+<option value="Last Name">Last Name</option>
+<option value="Email Address">Email Address</option>
+<option value="Birthday">Birthday</option>
+<option value="Address Line 1">Address Line 1</option>
+<option value="Address Line 2">Address Line 2</option>
+<option value="City">City</option>
+<option value="State / Province">State / Province</option>
+<option value="Zip / Postal Code">Zip / Postal Code</option>
+<option value="County">Country</option>
+<option value="Username">Username</option>
+<option value="Custom Field">Custom Field</option>
+</select>
+</div>
+</div>
+                               
+                               <div class="control-group">
+<label class="control-label">Value</label>
+<div class="controls">
+<input class="span6 " type="text"> <button type="submit" class="btn btn-small btn-success" style="margin-top:-13px;"><i class="icon-plus"></i> Add Field</button>
+</div>
+</div-->
+
+
                             
                               <div class="form-actions" style="padding-top:35px;">
                                  <button type="button" class="btn btn-primary" onclick="window.location.href='all_customers_report.html'"><i class="icon-play"></i> Run Report</button>
@@ -379,6 +393,19 @@
       	App.init();
       });
    </script>
+   <script type="text/javascript">
+        var next = 1;
+        function addFormField(){
+            var addto = "#field" + next; 
+	        next = next + 1;
+            var newIn = '<br /><br /><select class="span3 " tabindex="1" id="searchfield' + next + '" name="search' + next + '" data-placeholder="Choose a Category" style="padding-right:10px;"><option value="">Search For...</option><option value="Card Number">Card Number</option><option value="First Name">First Name</option><option value="Last Name">Last Name</option><option value="Email Address">Email Address</option><option value="Birthday">Birthday</option><option value="Address Line 1">Address Line 1</option><option value="Address Line 2">Address Line 2</option><option value="City">City</option><option value="State / Province">State / Province</option><option value="Zip / Postal Code">Zip / Postal Code</option><option value="County">Country</option><option value="Username">Username</option><option value="Custom Field">Custom Field</option></select><img src="assets/img/clearpix.png" width="15" height="5" /><input autocomplete="off" class="span3" id="field' + next + '" name="field' + next + '" type="text" data-provide="typeahead" data-items="8">';
+            var newInput = $(newIn);
+	        $(addto).after(newInput);
+            $("#field" + next).attr('data-source',$(addto).attr('data-source'));
+            $("#count").val(next);  
+        }
+</script>
+   
    <!-- END JAVASCRIPTS -->	
 </body>
 <!-- END BODY -->

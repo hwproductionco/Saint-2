@@ -141,16 +141,15 @@ $(function(){
 					</a>
 					<ul class="sub">
 				<li style="color:#ffffff; border-bottom:1 px solid #FFFFFF;"><strong>Transaction Reports</strong></li>		<li><a class="" href="all_transactions.html">All Transactions</li></a>
-						<li><a class="" href="redeemed_only.html">Audit: Redeemed Only</a></li>
-						<li><a class="" href="total_transactions.html">Audit: Total</a></li>
-<li style="color:#ffffff; border-bottom:1 px solid #FFFFFF;"><strong>Customer Reports</strong></li><li><a class="" href="all_customers.html">All Customers</a></li>
+						<li><a class="" href="redeemed_only.html">Redeemed</a></li>
+						<li><a class="" href="total_transactions.html">Totals</a></li>
+<li style="color:#ffffff; border-bottom:1 px solid #FFFFFF;"><strong>Customer Reports</strong></li><li><a class="" href="all_customers.html">Customer Search</a></li>
 <li><a class="" href="new_customers.html">New Customers</a></li>
 <li><a class="" href="frequent_customers.html">Frequent Customers</a></li>
 <li><a class="" href="missing_customers.html">Missing Customers</a></li>
-<li><a class="" href="birthday.html">Birthday</a></li>
-<li><a class="" href="custom_date.html">Custom Date</a></li>
-
-<li><a class="" href="customer_balance.html">Customer Balance</a></li></ul></li>
+<li><a class="" href="birthday.html">Birthdays</a></li>
+<!-- <li><a class="" href="custom_date.html">Custom Date</a></li>
+--><li><a class="" href="customer_balance.html">Balances</a></li></ul></li>
 				<li class="has-sub">
 					<a href="javascript:;" class="">
 					<i class="icon-user"></i> Users
@@ -258,7 +257,7 @@ $(function(){
 							<!-- BEGIN EXAMPLE TABLE PORTLET-->
 							<div class="widget">
 								<div class="widget-title">
-									<h4><i class="icon-group"></i> All Customers</h4>
+									<h4><i class="icon-group"></i> Customer Search</h4>
 									<span class="tools">
 									
 											
@@ -288,10 +287,112 @@ $(function(){
 											</tr>
 											
 										</tbody>
-									</table><div style="margin-top:15px;"> <button class="btn btn-warning">
-<i class="icon-cloud-download icon-white"></i>
-Export to Excel
-</button></div>
+									</table><div class="btn-group" style="margin-top:15px;">
+                                 <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown"  style="width:100%;">Action <span class="caret"></span></button>
+                                 <ul class="dropdown-menu">
+                                    <li><a href=""><i class="icon-download-alt"></i> Export to Excel</a></li>
+                                    <li><a href="#myModal2" data-toggle="modal"><i class="icon-upload-alt"></i> Batch Record Transactions</a></li>
+                                   
+                                    
+                                 </ul>
+                              </div>
+                              
+                              
+                               <div id="myModal1" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+											<h3 id="myModalLabel2">Delete</h3>
+										</div>
+										<div class="modal-body scroller">
+											<p>You are about to delete these users.  Are you sure you want to continue?</p>
+
+
+										</div>
+										<div class="modal-footer">
+											<button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+											<button class="btn btn-primary">Continue</button>
+										</div>
+									</div>
+
+								 <div id="myModal2" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+											<h3 id="myModalLabel2">Batch Import Transactions</h3>
+										</div>
+										<div class="modal-body scroller">
+											
+										<table border="0" width="100%">
+                                        <tbody>
+                                        <tr>
+                                        <td><label class="control-label" for="input1">Campaign Selector</label></td>
+                                        <td><select class="span6 responsive" data-placeholder="Choose a Language" tabindex="1">
+                                      <option value="">Points Campaign</option>
+				<option value="">Gift Card Campaign</option>
+				<option value="">Buy X Campaign</option>
+				<option value="">Earn Per Event</option>
+				<option value="">Event Campaign</option>
+				
+				
+                                 
+                                    </select></td>
+                                    </tr>
+                                    
+                                    
+                                     <tr>
+                                        <td><label class="control-label" for="input1">Add or Deduct</label></td>
+                                        <td><select class="span6 responsive" data-placeholder="Choose a Language" tabindex="1">
+                                      <option value="">Add</option>
+				<option value="">Deduct</option>
+				
+                                    </select></td>
+                                    </tr>
+                                    
+                                      <tr>
+                                        <td><label class="control-label" for="input1">Amount</label></td>
+                                        <td><input type="text" id="input1" class="input-small responsive" style="width:138px;"/></td>
+                                    </tr>
+                                    
+                                    
+                                     <tr>
+                                        <td><label class="control-label" for="input1">Buy X Service Items</label></td>
+                                        <td><select class="span6 responsive" data-placeholder="Choose a Language" tabindex="1">
+                                      <option value="">Service Item 1</option>
+				<option value="">Service Item 2</option>
+				
+                                    </select></td>
+                                    </tr>
+                                    
+                                     <tr>
+                                        <td><label class="control-label" for="input1">Description</label></td>
+                                        <td><input type="text" id="input1" class="input-small responsive" style="width:138px;"/></td>
+                                    </tr>
+                                    
+                                     <tr>
+                                	<td style="padding-top:8px;">Convert transaction<br />amount into what<br />the campaign tracks?</td>
+                                    <td style="padding-top:8px;"> <input type="checkbox"/> Yes</td>
+                                </tr>
+                                    
+                                     <tr>
+                                	<td style="padding-top:8px;">Send Email?</td>
+                                    <td style="padding-top:8px;"> <input type="checkbox"/> Yes</td>
+                                </tr>
+                                    
+                                    
+                                    </tbody>
+                                    </table>
+                               
+
+										</div>
+										<div class="modal-footer">
+											<button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+											<button class="btn btn-primary">Continue</button>
+										</div>
+									</div>
+
+                              
+                              
+                                    
+								</div>
                                     
 								</div>
 							</div>
